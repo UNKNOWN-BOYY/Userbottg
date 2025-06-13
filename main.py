@@ -8,7 +8,14 @@ API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 SESSION_STRING = os.environ.get("SESSION_STRING")
 
-bot = Client(name="userbot", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
+bot = Client(
+    "userbot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    session_string=SESSION,
+    no_updates=True  # Disable update handling
+)
+
 
 # Load plugins
 def load_plugins():
