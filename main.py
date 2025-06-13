@@ -31,8 +31,11 @@ def load_plugins():
         print(f"Loaded plugin: {plugin.name}")
 
 def start_bot():
+    import asyncio
+    asyncio.set_event_loop(asyncio.new_event_loop())
     load_plugins()
     bot.run()
+
 
 if __name__ == "__main__":
     Thread(target=start_bot).start()
