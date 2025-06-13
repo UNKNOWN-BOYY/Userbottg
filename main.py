@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
-SESSION_STRING = os.environ.get("SESSION_STRING")
+SESSION = os.environ.get("SESSION_STRING")
 
 bot = Client(
     "userbot",
