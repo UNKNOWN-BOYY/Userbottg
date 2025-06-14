@@ -16,14 +16,16 @@ app = Client(
     plugins=dict(root="plugins")
 )
 
-# Flask app to keep instance alive
+# Flask app to keep instance alive for Koyeb
 web = Flask(__name__)
 
 @web.route('/')
 def home():
     return "Userbot is running!"
 
+# 🔧 This part is critical
 def run_flask():
+    # Bind to 0.0.0.0 (public) instead of localhost (127.0.0.1)
     web.run(host="0.0.0.0", port=8080)
 
 # Run Flask in a separate thread
