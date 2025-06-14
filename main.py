@@ -18,12 +18,9 @@ app = Client(
 web = Flask(__name__)
 
 @web.route('/')
-def home():
-    return "OK", 200
-
-@web.route('/health')
 def health():
-    return "Healthy", 200
+    return "Healthy", 200  # Return a clear HTTP 200 for Koyeb
+
 
 def run_flask():
     web.run(host="0.0.0.0", port=8080)
